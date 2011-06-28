@@ -1,0 +1,26 @@
+=animated-button($img: false)
+  .title, .subtitle
+    display: block
+  .title
+    font-size: 105%
+  .subtitle
+    font-size: 80%
+    color: hsla(0, 0, 90%, 0.5)
+
+  +button-colors($link-color, $header-bg-color, hsla(0, 0%, 40%, 1))
+  +anchor-button
+  border-radius: 5px
+  border-color: hsla(0, 0%, 40%, 0.3)
+  
+  +transition-property(all)
+  +transition-duration(0.75s)
+
+  &:hover
+    .subtitle
+      color: hsla(0, 0, 95%, 1)
+    border-radius: 5px
+    border: 1px solid hsla(0, 0%, 47%, 1)
+    background-color: #4d4d4d
+    border-top: 1px solid hsla(0, 0%, 15%, 1)
+    border-left: 1px solid hsla(0, 0%, 15%, 1)
+    +background-image(linear-gradient(top, rgba(#4d4d4d, 1), rgba(darken(#4d4d4d, 10%), 1)))

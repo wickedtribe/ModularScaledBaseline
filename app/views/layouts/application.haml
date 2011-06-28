@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title= [@title, "by Dez Finney"].compact.join(" | ")
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'jquery.min', 'application'
+    = yield_content :include
+    :plain
+      <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+  %body
+    #container
+      = yield

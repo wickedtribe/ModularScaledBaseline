@@ -1,0 +1,40 @@
+%header#page-header
+  .container
+    #masthead
+      %h1 ModBase
+      %h2
+        A Modularly Scaled Baseline
+    #downloads
+      %a.ml-button{:href => "http://www.github.com"}
+        %span.title Compass Plugin
+        %span.subtitle Fork it on github.com
+      %a.ml-button{:href => "#"}
+        %span.title Less.js Extension
+        %span.subtitle  less styles of this page
+        %img{:src => "images/buttons/tick.png"}
+      %a.ml-button{:href => "#"}
+        %span.title Download
+        %span.subtitle the css of this page
+#style-controls
+  #styles.container
+    %span Important Numbers
+    %span Font Colors
+    %span Font Family
+#content
+  %ul#tab-controls
+    %li
+      %a{:href => "#sample-page"} Sample Page
+    %li 
+      %a{:href => "#type-elements"} Type Elements
+    %li 
+      %a{:href => "#font-glyphs"} Glyphs
+  %a.button.customize{:href => "#"} 
+    %img{:src => "images/buttons/tick.png"}
+    Customize
+  = partial "sample-page"
+  = partial "type-elements"
+  = partial "glyphs"
+
+:javascript
+  $(function() {
+  });

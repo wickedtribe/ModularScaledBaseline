@@ -1,0 +1,156 @@
+#type-elements
+  %h2 Typography Elements
+
+  .main
+    %h3 
+      Inline Elements
+    :textile
+
+      The @<p>@ tag defines a paragraph. The paragraph element will have a margin that equals the -1.5em- +line height+, or be indented the width of the line height or you can customize either. Inline elements **bold** and __italic__ can be added to a paragraph as well, even though *strong* and _emphasis_ should be used instead to remain semantically correct. Other inline elements that are inline are using ~subscripted~ and using ^superscripted^.
+
+      note: the @<strong>@ and @<em>@ tags should be styled with @font-weight:normal;@ @font-style:normal;@ @font-variant:normal;@ in order to avoid a "webkit bug":https://bugs.webkit.org/show_bug.cgi?id=34147. 
+
+    %p
+      %a{:href => "#", :class => "link"} link
+      %a{:href => "#", :class => "visited"} visited
+      %a{:href => "#", :class => "hover"} hover
+      %a{:href => "#", :class => "active"} active
+      %a{:href => "#", :class => "focus"} focus
+
+    %pre
+      :preserve
+        # My name, Dezmond L Finney, is the answer to everything. Is yours?
+
+        name = "dezmondlfinney"
+        def nameAnswer(name)
+          nameNumber = name.length
+          the_answer_to_everything = nameNumber * 3
+        end
+
+    %form#sample-form
+      %fieldset
+        %legend Your details
+        %ol
+          %li
+            %label{:for => "name"} Name
+            %input#name{:autofocus => "", :name => "name", :placeholder => "First and last name", :required => "", :type => "text"}
+          %li
+            %label{:for => "email"} Email
+            %input#email{:name => "email", :placeholder => "example@domain.com", :required => "", :type => "email"}
+          %li
+            %label{:for => "phone"} Phone
+            %input#phone{:name => "phone", :placeholder => "Eg. +447500000000", :required => "", :type => "tel"}
+      %fieldset
+        %legend Delivery address
+        %ol
+          %li
+            %label{:for => "address"} Address
+            %textarea#address{:name => "address", :required => "", :rows => "5"}
+          %li
+            %label{:for => "postcode"} Post code
+            %input#postcode{:name => "postcode", :required => "", :type => "text"}
+          %li
+            %label{:for => "country"} Country
+            %input#country{:name => "country", :required => "", :type => "text"}
+      %fieldset
+        %legend Card details
+        %ol
+          %li
+            %fieldset
+              %legend Card type
+              %ol
+                %li
+                  %input#visa{:name => "cardtype", :type => "radio"}
+                    %label{:for => "visa"} VISA
+                %li
+                  %input#amex{:name => "cardtype", :type => "radio"}
+                    %label{:for => "amex"} AmEx
+                %li
+                  %input#mastercard{:name => "cardtype", :type => "radio"}
+                    %label{:for => "mastercard"} Mastercard
+          %li
+            %label{:for => "cardnumber"} Card number
+            %input#cardnumber{:name => "cardnumber", :required => "", :type => "number"}
+          %li
+            %label{:for => "secure"} Security code
+            %input#secure{:name => "secure", :required => "", :type => "number"}
+          %li
+            %label{:for => "namecard"} Name on card
+            %input#namecard{:name => "namecard", :placeholder => "Exact name as on the card", :required => "", :type => "text"}
+      %fieldset
+        %button{:type => "submit"} Buy it!
+
+    %table
+      %tbody
+        %thead
+          %tr
+            %th Month
+            %th Bills
+            %th Games
+            %th Total
+
+        %tbody
+          %tr
+            %td January
+            %td $100
+            %td $50
+            %td $150
+
+          %tr
+            %td Febuary
+            %td $100
+            %td $75
+            %td $175
+
+        %tfoot
+          %tr
+            %td{:colspan => "3", :style => "text-align: right"} Total
+            %td $200
+
+  .sidebar
+    %h3 Block Elements
+
+    %h1 h1 
+    %h2 h2
+    %h3 h3
+    %h4 h4
+    %h5 h5
+    %h6 h6
+
+    %dl
+      %dt
+      %dd
+
+    %ol
+      %li
+        Preheat the oven to 400&ordm;F (200&ordm;C).
+      %li
+        Have a clean, spacious countertop available for kneading and rolling.
+      %li
+        Place the flour, salt, and butter in a large bowl.
+        %ol
+          %li
+            With a pastry blender or fork, smash up the butter until it forms tiny balls with the flour.
+          %li
+            Then slowly add the water.
+
+    %ul
+      %li 
+        Milk
+      %li
+        Eggs
+      %li
+        Fruit
+        %ul
+          %li
+            Apples
+          %li
+            Strawberries
+          %li
+            Oranges
+
+    %blockquote
+      Indifference towards people and the reality in which they live is actually the one and only cardinal sin in design. 
+      %cite
+        :textile
+          ??-- Dieter Rams??

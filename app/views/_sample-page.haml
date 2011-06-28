@@ -1,0 +1,40 @@
+#sample-page
+  .main
+    %h2 More Meaningful Typography
+    :textile
+      We have all heard of the golden mean (also known as the golden ratio or golden section): the self-replicating page with a proportion of 1:1.618 that is said to be found in everything from the design of ancient Greek architecture to the growth patterns of plants. This and other meaningful ratios rooted in geometry, music, nature, and history can be expressed as modular scales and put to work on the web.
+
+      p(image center). !images/scale.png!
+      Fig 1: A simple modular scale: 10@1:1.618
+      
+      p(image left). !images/example-page-third.png!
+      Fig 2: Our example page, designed using a modular scale.
+
+      A modular scale is a sequence of numbers that relate to one another in a meaningful way. Using the golden ratio, for example, we can produce values for a modular scale by multiplying by 1.618 to arrive at the next highest number, or dividing by 1.618 to arrive at the next number down.
+      
+      By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.
+      
+      Let's start by looking at what modular scales are, and how they apply to web design. Next, we'll dive into this example and go over my reasons for starting with certain numbers, choosing particular proportions, and and applying my scale's numbers to specific CSS measurements. Finally, we'll think about how designing with modular scales fits into current workflows, and where we might go from here.
+      
+      This excerpt is from the article More "Meaningful Typography":http://www.alistapart.com/articles/more-meaningful-typography/ _by_ Tim Brown for "alistapart":http://www.alistapart.com
+
+      
+  .sidebar
+    :textile
+      bq. A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
+      ??-- Robert Bringhurst??
+
+    %h2 
+      Making a Modular Scale
+    :textile
+
+      Making a modular scale is easy. You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers:
+
+      * 10.000 * 1.618 = 16.180
+      * 16.180 * 1.618 = 26.179
+      * 26.179 * 1.618 = 42.358
+      * 42.358 * etc.
+      * 10.000 / 1.618 = 6.180
+      * 6.180 / 1.618 = 3.819
+      * 3.819 / 1.618 = 2.360
+      * 2.360 / etc.

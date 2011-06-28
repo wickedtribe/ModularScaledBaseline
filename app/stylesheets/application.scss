@@ -1,0 +1,154 @@
+$blueprint-font-size: 14px;
+$font-color: hsl(0, 0%, 10%);
+$link-color: hsl(216, 57%, 70%);
+
+$normal: $link-color;
+$hover: $normal;
+$active: $normal;
+$visited: $normal;
+$focus: $normal;
+
+$header-bg-color: #4d4d4d;
+
+@import "blueprint/reset";
+@import "compass";
+@import "partials/base";
+@import "partials/buttons";
+@import "partials/forms";
+@import "blueprint/buttons";
+@import "blueprint";
+
+/* ----------------------------  General HTML Elements */
+
+body {
+  @include blueprint-typography(true);
+  font-family: unquote("Times New Roman, Quattrocento, arial, serif");
+  background-color: hsl(0, 0%, 100%);
+  a {
+      @include link-colors($normal, $hover, $active, $visited, $focus);}
+
+}
+
+blockquote {
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    background: hsl(219, 62%, 94%);
+    cite { margin-left: 1.5em; }
+    p {margin: 0px;}
+ }
+
+cite { font-style: normal; }
+
+.left {
+    float: left;
+    margin: 0px 0em 0em 0em;
+    width: 200px; }
+
+.center { text-align: center; }
+
+.image {
+    font-style: italic;}
+
+.ml-button {
+    @include animated-button;
+    font-family: unquote("Helvetica, Sans");
+}
+
+.ml-button.dropdown {
+    @include animated-button;
+    width: 175px;
+    font-family: unquote("Helvetica, Sans");
+}
+/* ------------------------------------  Layout Styles */
+
+/* ----------------------------  General Layout Styles */
+#page-header {
+    @include background-image(linear-gradient(top, #4d4d4d, #4d4d4d 50%, #454545 90%, #1c1c1c));
+    margin-bottom: 1.5em;
+}
+
+.container {
+    @include container;
+}
+
+#masthead{
+    @include column(9);
+    #{headers(all)} { margin: 0px; }
+    h1 {
+        font-weight: bold;
+        color: #87aade;
+    }
+    h2 { margin-left: 1.5em; font-size: 18px; color: #fff;}
+}
+
+#downloads {
+    @include column(15, true);
+}
+
+#tab-controls {
+    text-align: center;
+    @include horizontal-list;
+}
+
+#style-controls {
+    @include background-image(linear-gradient(bottom, #1c1c1c, #454545 10%, #4d4d4d, #4d4d4d 50%, #454545 90%, #1c1c1c));
+    color: #fff;
+    height: 50px;
+    padding: 30px 0px;
+}
+
+#content {
+    @extend .container;
+    padding: 0px 10px;
+}
+
+/* --------------------------------  UI Element Styles */
+@mixin button-left-img($img: image_url("tick.png")) {
+    @include anchor-button;
+    @include border-radius(4px);
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 16px;
+      width: 16px;
+      background-image: $img;
+      background-color: #bada55;
+    }
+      
+}
+.button {
+    @include anchor-button;
+}
+#tab-controls li a {
+    @extend .button;
+}
+
+/* --------------------------------  Section Layout Styles */
+
+#sample-page {
+  @include column(24, true);
+
+  .main {
+    @include column(14);
+    @include colborder(1); } 
+
+  .sidebar {
+    @include column(9, true); }
+
+}
+
+#type-elements {
+  @include column(24, true);
+
+  .main {
+    @include column(14);
+    @include colborder(1); } 
+
+  .sidebar {
+    @include column(9, true); }
+
+}
